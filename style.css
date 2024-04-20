@@ -592,10 +592,7 @@ main.dark .switch::before{
     color: var(--text-colorblack);
 }
 
-
 /* end of my project */
-
-
 
 /* show content */
 .profile-content.active {
@@ -617,7 +614,6 @@ main.dark .switch::before{
 
 
 @media(min-width: 375px){
-
     .sidebar.close{
         width: 70px;
         padding: 10px 8px;
@@ -653,7 +649,6 @@ main.dark .switch::before{
         width: 88px;
         padding: 0px 16px;
     }
-    
     .sidebar ~ .home .profile{
         display: block;
     }
@@ -681,10 +676,7 @@ main.dark .switch::before{
         display: block;
     }
 }
-
-
 @media (min-width: 760px){
-
     .services-container{
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
