@@ -24,9 +24,9 @@ const body = document.querySelector("main");
         sidebar.classList.toggle("close")
      });
      
-     searchBtn.addEventListener('click', ()=>{
-        sidebar.classList.remove("close")
-     });
+   //   searchBtn.addEventListener('click', ()=>{
+   //      sidebar.classList.remove("close")
+   //   });
 
      modeSwitch.addEventListener('click', ()=>{
         body.classList.toggle("dark");
