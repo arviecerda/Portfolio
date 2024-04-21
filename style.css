@@ -332,8 +332,10 @@ main.dark .switch::before{
     padding: 10px 25px;
     border: none;
     outline: none;
-    background: var(--button-color);
-    color: var(--primary-color-light);
+    background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
 .image-profile{
@@ -421,7 +423,7 @@ main.dark .switch::before{
     align-items: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     background: var(--button-color);
     color: var(--body-color);
 }
@@ -503,7 +505,7 @@ main.dark .switch::before{
     cursor: pointer;
     font-size: clamp(0.6rem, 0.5rem + 0.4vw, 0.8rem);
 }
-/* end of services */
+/* end of languanges */
 
 /* start of mY PROJECTS */
 .project-content{
@@ -591,8 +593,133 @@ main.dark .switch::before{
     font-weight: 600;
     color: var(--text-colorblack);
 }
-
 /* end of my project */
+/* start of Email */
+.email-content{
+    width: 100%;
+    min-height: 100%;
+    display: none;
+    align-items: center;
+    background: var(--body-color);
+    color: var(--text-colorblack);
+    transition: var(--tran-05);
+    padding-right: 200px;
+    padding-top: 40px;
+}
+.email{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.email h1{
+    font-size: clamp(1.8rem, 1.45rem + 1.4vw, 2.5rem);
+    margin-bottom: 30px;
+}
+.email p{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.email-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.email-container form{
+    width: 50%;
+    background-color: #695CFE;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+    border-radius: 8px;
+}
+.email-container form h3{
+    color: var(--body-color);
+}
+.email-container input, textarea{
+width: 100%;
+   border: none;
+   outline: none;
+   border-radius: 2px;
+   padding: 15px 15px;
+   margin-top: 10px;
+   margin-bottom: 5px;
+}
+
+.email-container form textarea{
+    resize: none;
+}
+
+.email-container form button{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 10px 0px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/* start of Resume */
+.resume-content{
+    width: 100%;
+    min-height: 100%;
+    display: none;
+    align-items: center;
+    background: var(--body-color);
+    color: var(--text-colorblack);
+    transition: var(--tran-05);
+    padding-right: 200px;
+    padding-top: 40px;
+}
+.resume{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.resume h1{
+    font-size: clamp(1.8rem, 1.45rem + 1.4vw, 2.5rem);
+    margin-bottom: 30px;
+}
+.resume p{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.resume-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.resume-container a {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #695CFE;
+    color: #fff;
+    border-radius: 6px;
+}
+
+#show-resume{
+    padding: 0;
+    background: none;
+}
+
+/* end of Resume */
+
+
 
 /* show content */
 .profile-content.active {
@@ -610,10 +737,17 @@ main.dark .switch::before{
   .project-content.active{
     display: flex;
   }
+  .email-content.active{
+    display: flex;
+  }
+  .resume-content.active{
+    display: flex;
+  }
   /* end show content */
 
 
-@media(min-width: 375px){
+@media(min-width: 300px){
+
     .sidebar.close{
         width: 70px;
         padding: 10px 8px;
@@ -632,7 +766,7 @@ main.dark .switch::before{
         gap: 10px;
     }
     .languange-container{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0px;
     }
     .project-container{
@@ -643,12 +777,16 @@ main.dark .switch::before{
     .languange-content{
         padding-top: 0px;
     } 
+    .email-container form{
+        width: 100%;
+    }
 }
 @media(min-width: 475px){
     .sidebar.close{
         width: 88px;
         padding: 0px 16px;
     }
+    
     .sidebar ~ .home .profile{
         display: block;
     }
@@ -667,6 +805,7 @@ main.dark .switch::before{
     .services-content{
         padding-top: 0px;
     } 
+
 }
 @media(min-width: 575px){
     .sidebar ~ .home .profile{
@@ -675,25 +814,35 @@ main.dark .switch::before{
     .sidebar.close ~ .home .profile{
         display: block;
     }
+
 }
+
+
 @media (min-width: 760px){
+
     .services-container{
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
     .languange-container{
-        grid-template-columns: repeat(3, 0.2fr);
+        grid-template-columns: repeat(4, 0.2fr);
         gap: 10px;
     }
     .project-container{
         grid-template-columns: repeat(2, 1fr);
     }
+    .email-container form{
+        width: 80%;
+    }
 }
 
 @media (min-width: 1280px){
     .services-container{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 0.8fr);
         gap: 20px;
+    }
+    .email-container form{
+        width: 50%;
     }
 }
 
@@ -703,7 +852,7 @@ main.dark .switch::before{
     .home{
         padding: 20px 20px 20px 10px;
     }
-    .about-content, .services-content, .languange-content, .project-content{
+    .about-content, .services-content, .languange-content, .project-content, .email-content, .resume-content{
         padding-right: 0px;
     }
     .profile .profile-content{
